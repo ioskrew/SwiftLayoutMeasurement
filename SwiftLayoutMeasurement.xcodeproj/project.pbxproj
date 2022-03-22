@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		74287AED27EA08C300057B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287AEC27EA08C300057B2B /* AppDelegate.swift */; };
 		74287B0427EA08C400057B2B /* SwiftLayoutMeasurementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74287B0327EA08C400057B2B /* SwiftLayoutMeasurementTests.swift */; };
+		748D820A27EA13E300004A50 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 748D820927EA13E300004A50 /* SnapKit */; };
+		74C0733927EA14DE004E3C0D /* SwiftLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 74C0733827EA14DE004E3C0D /* SwiftLayout */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74C0733927EA14DE004E3C0D /* SwiftLayout in Frameworks */,
+				748D820A27EA13E300004A50 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +102,10 @@
 			dependencies = (
 			);
 			name = SwiftLayoutMeasurement;
+			packageProductDependencies = (
+				748D820927EA13E300004A50 /* SnapKit */,
+				74C0733827EA14DE004E3C0D /* SwiftLayout */,
+			);
 			productName = SwiftLayoutMeasurement;
 			productReference = 74287AE927EA08C300057B2B /* SwiftLayoutMeasurement.app */;
 			productType = "com.apple.product-type.application";
@@ -148,6 +156,10 @@
 				Base,
 			);
 			mainGroup = 74287AE027EA08C300057B2B;
+			packageReferences = (
+				748D820827EA13E300004A50 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				74C0733727EA14DE004E3C0D /* XCRemoteSwiftPackageReference "SwiftLayout" */,
+			);
 			productRefGroup = 74287AEA27EA08C300057B2B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -432,6 +444,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		748D820827EA13E300004A50 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		74C0733727EA14DE004E3C0D /* XCRemoteSwiftPackageReference "SwiftLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ioskrew/SwiftLayout";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		748D820927EA13E300004A50 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 748D820827EA13E300004A50 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		74C0733827EA14DE004E3C0D /* SwiftLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74C0733727EA14DE004E3C0D /* XCRemoteSwiftPackageReference "SwiftLayout" */;
+			productName = SwiftLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 74287AE127EA08C300057B2B /* Project object */;
 }
