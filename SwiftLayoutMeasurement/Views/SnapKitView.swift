@@ -456,38 +456,37 @@ class SnapKitView: UIView {
         optionRow1.addSubview(tmp811f90UIView)
 
         headerView.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide)
-            make.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+            make.top.leading.trailing.equalTo(self.safeAreaLayoutGuide)
             make.height.equalTo(60.0)
         }
         
         headerLabel.snp.makeConstraints { make in
-            make.leading.equalTo(headerView).offset(16)
-            make.centerY.equalTo(headerView)
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(16.0)
         }
         
         headerButton0.snp.makeConstraints { make in
-            make.centerY.equalTo(headerView)
-            make.size.equalTo(40)
+            make.centerY.equalToSuperview()
+            make.width.height.equalTo(40.0)
         }
         
         headerButton1.snp.makeConstraints { make in
-            make.centerY.equalTo(headerView)
+            make.centerY.equalToSuperview()
             make.leading.equalTo(headerButton0.snp.trailing).offset(2.0)
-            make.size.equalTo(40)
+            make.width.height.equalTo(40.0)
         }
         
         headerButton2.snp.makeConstraints { make in
-            make.centerY.equalTo(headerView)
+            make.centerY.equalToSuperview()
             make.leading.equalTo(headerButton1.snp.trailing).offset(2.0)
-            make.size.equalTo(40)
+            make.height.width.equalTo(40.0)
         }
         
         headerButton3.snp.makeConstraints { make in
-            make.centerY.equalTo(headerView)
+            make.centerY.equalToSuperview()
             make.leading.equalTo(headerButton2.snp.trailing).offset(2.0)
-            make.trailing.equalTo(headerView).inset(8.0)
-            make.size.equalTo(40)
+            make.height.width.equalTo(40.0)
+            make.trailing.equalTo(-8.0)
         }
         
         walletView.snp.makeConstraints { make in
@@ -497,307 +496,371 @@ class SnapKitView: UIView {
         }
         
         walletHeaderView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(walletView)
+            make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(60.0)
         }
         
         walletHeaderTitle.snp.makeConstraints { make in
-            make.leading.equalTo(walletHeaderView).offset(16.0)
-            make.centerY.equalTo(walletHeaderView)
+            make.leading.equalTo(16.0)
+            make.centerY.equalToSuperview()
             make.height.equalTo(40.0)
         }
         
         walletHeaderTitleArrow.snp.makeConstraints { make in
             make.leading.equalTo(walletHeaderTitle.snp.trailing)
             make.centerY.equalTo(walletHeaderTitle)
-            make.size.equalTo(20.0)
+            make.height.width.equalTo(20.0)
         }
         walletHeaderCertificationButton.snp.makeConstraints { make in
-            make.centerY.equalTo(walletHeaderView)
+            make.centerY.equalToSuperview()
             make.size.equalTo(CGSize(width: 135.0, height: 31.0))
         }
         walletHeaderButtonSeparator.snp.makeConstraints { make in
             make.leading.equalTo(walletHeaderCertificationButton.snp.trailing).offset(3.0)
+            make.centerY.equalToSuperview()
             make.size.equalTo(CGSize(width: 1.0, height: 15.0))
         }
         walletHeaderQRCheckinButton.snp.makeConstraints { make in
-            make.centerY.equalTo(walletHeaderView)
+            make.centerY.equalToSuperview()
             make.leading.equalTo(walletHeaderButtonSeparator.snp.trailing).offset(3.0)
             make.trailing.equalTo(walletHeaderView.snp.trailing).offset(-8.0)
             make.size.equalTo(CGSize(width: 130.0, height: 31.0))
         }
         walletNoticeView.snp.makeConstraints { make in
-            make.centerX.equalTo(walletView)
+            make.centerX.equalToSuperview()
             make.width.equalTo(walletView).offset(-32.0)
-            make.height.equalTo(40.0)
             make.top.equalTo(walletHeaderView.snp.bottom)
+            make.height.equalTo(40.0)
         }
         walletNoticeIcon.snp.makeConstraints { make in
-            make.centerY.equalTo(walletNoticeView)
-            make.leading.equalTo(walletNoticeView).offset(10.0)
-            make.size.equalTo(20.0)
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(10.0)
+            make.height.width.equalTo(20.0)
         }
         walletNoticeTitle.snp.makeConstraints { make in
             make.leading.equalTo(walletNoticeIcon.snp.trailing).offset(5.0)
-            make.centerY.equalTo(walletNoticeView)
+            make.centerY.equalToSuperview()
         }
         walletNoticeArrow.snp.makeConstraints { make in
-            make.centerY.equalTo(walletNoticeView)
-            make.size.equalTo(15.0)
-            make.trailing.equalTo(walletNoticeView.snp.trailing).offset(-10.0)
+            make.centerY.equalToSuperview()
+            make.width.height.equalTo(15.0)
+            make.trailing.equalTo(-10.0)
         }
         walletPayView.snp.makeConstraints { make in
-            make.leading.trailing.bottom.equalTo(walletView)
+            make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(walletNoticeView.snp.bottom).offset(15.0)
         }
         walletPayIcon.snp.makeConstraints { make in
-            make.leading.equalTo(walletPayView.snp.leading).offset(16.0)
+            make.leading.equalToSuperview().offset(16.0)
             make.centerY.equalTo(walletPayTitle)
-            make.size.equalTo(15.0)
+            make.width.height.equalTo(15.0)
         }
         walletPayTitle.snp.makeConstraints { make in
-            make.top.equalTo(walletPayView)
+            make.top.equalToSuperview()
             make.leading.equalTo(walletPayIcon.snp.trailing).offset(2.0)
         }
         walletPayBalance.snp.makeConstraints { make in
             make.centerY.equalTo(walletPayTitle)
-            make.trailing.equalTo(walletPayView).offset(-16.0)
+            make.trailing.equalTo(-16.0)
         }
         walletPayTransferButton.snp.makeConstraints { make in
-            make.leading.equalTo(walletPayView).offset(6.0)
+            make.leading.equalToSuperview().offset(6.0)
             make.top.equalTo(walletPayTitle.snp.bottom).offset(10.0)
-            make.size.equalTo(CGSize(width: 75.0, height: 31.0))
+            make.size.equalTo(CGSize(width: 75, height: 31))
         }
         walletPayButtonSeparator0.snp.makeConstraints { make in
             make.leading.equalTo(walletPayTransferButton.snp.trailing)
             make.centerY.equalTo(walletPayTransferButton)
-            make.size.equalTo(CGSize(width: 1.0, height: 15.0))
+            make.height.equalTo(15.0)
+            make.width.equalTo(1.0)
         }
         walletPayPaymentButton.snp.makeConstraints { make in
-            make.leading.equalTo(walletPayButtonSeparator0.snp.trailing)
             make.centerY.equalTo(walletPayTransferButton)
+            make.leading.equalTo(walletPayButtonSeparator0.snp.trailing)
             make.size.equalTo(CGSize(width: 80.0, height: 31.0))
         }
         walletPayButtonSeparator1.snp.makeConstraints { make in
-            make.leading.equalTo(walletPayPaymentButton.snp.trailing)
             make.centerY.equalTo(walletPayTransferButton)
-            make.top.equalTo(walletPayTitle.snp.bottom).offset(10.0)
-            make.size.equalTo(CGSize(width: 1.0, height: 15.0))
+            make.leading.equalTo(walletPayPaymentButton.snp.trailing)
+            make.width.equalTo(1.0)
+            make.height.equalTo(15.0)
         }
         walletPayAssetsButton.snp.makeConstraints { make in
             make.leading.equalTo(walletPayButtonSeparator1.snp.trailing)
             make.centerY.equalTo(walletPayPaymentButton)
-            make.size.equalTo(CGSize(width: 66.0, height: 31.0))
+            make.size.equalTo(CGSize(width: 66, height: 31))
         }
         walletPayPurchasesButton.snp.makeConstraints { make in
-            make.centerY.equalTo(walletPayPaymentButton)
-            make.trailing.equalTo(walletPayView).offset(-5.0)
-            make.size.equalTo(CGSize(width: 130.0, height: 32.0))
+            make.centerY.equalTo(walletPayTransferButton)
+            make.trailing.equalTo(-5.0)
+            make.size.equalTo(CGSize(width: 130, height: 32))
         }
+
         serviceList0View.snp.makeConstraints { make in
             make.leading.trailing.equalTo(self.safeAreaLayoutGuide)
             make.top.equalTo(walletView.snp.bottom).offset(15.0)
             make.height.equalTo(75.0)
         }
-        NSLayoutConstraint.activate([
-            serviceItem0.topAnchor.constraint(equalTo: serviceList0View.topAnchor),
-            serviceItem0.leadingAnchor.constraint(equalTo: serviceList0View.leadingAnchor),
-            serviceItem0.bottomAnchor.constraint(equalTo: serviceList0View.bottomAnchor),
-            serviceItem0.widthAnchor.constraint(equalTo: serviceList0View.widthAnchor, multiplier: 0.25),
-            serviceItem0Image.topAnchor.constraint(equalTo: serviceItem0.topAnchor, constant: 10.0),
-            serviceItem0Image.centerXAnchor.constraint(equalTo: serviceItem0.centerXAnchor),
-            serviceItem0Image.heightAnchor.constraint(equalToConstant: 40.0),
-            serviceItem0Image.widthAnchor.constraint(equalToConstant: 40.0),
-            tmpa668d0UILabel.centerXAnchor.constraint(equalTo: serviceItem0.centerXAnchor),
-            tmpa668d0UILabel.topAnchor.constraint(equalTo: serviceItem0Image.bottomAnchor, constant: 4.0),
-            tmpa2fb30UIView.trailingAnchor.constraint(equalTo: serviceItem0Image.trailingAnchor),
-            tmpa2fb30UIView.topAnchor.constraint(equalTo: serviceItem0Image.topAnchor),
-            tmpa2fb30UIView.widthAnchor.constraint(equalToConstant: 4.0),
-            tmpa2fb30UIView.heightAnchor.constraint(equalToConstant: 4.0),
-            serviceItem1.leadingAnchor.constraint(equalTo: serviceItem0.trailingAnchor),
-            serviceItem1.topAnchor.constraint(equalTo: serviceList0View.topAnchor),
-            serviceItem1.bottomAnchor.constraint(equalTo: serviceList0View.bottomAnchor),
-            serviceItem1.widthAnchor.constraint(equalTo: serviceList0View.widthAnchor, multiplier: 0.25),
-            serviceItem1Image.topAnchor.constraint(equalTo: serviceItem1.topAnchor, constant: 10.0),
-            serviceItem1Image.centerXAnchor.constraint(equalTo: serviceItem1.centerXAnchor),
-            serviceItem1Image.heightAnchor.constraint(equalToConstant: 40.0),
-            serviceItem1Image.widthAnchor.constraint(equalToConstant: 40.0),
-            tmpa67f30UILabel.centerXAnchor.constraint(equalTo: serviceItem1.centerXAnchor),
-            tmpa67f30UILabel.topAnchor.constraint(equalTo: serviceItem1Image.bottomAnchor, constant: 4.0),
-            tmpa68210UIView.trailingAnchor.constraint(equalTo: serviceItem1Image.trailingAnchor),
-            tmpa68210UIView.topAnchor.constraint(equalTo: serviceItem1Image.topAnchor),
-            tmpa68210UIView.widthAnchor.constraint(equalToConstant: 4.0),
-            tmpa68210UIView.heightAnchor.constraint(equalToConstant: 4.0),
-            serviceItem2.topAnchor.constraint(equalTo: serviceList0View.topAnchor),
-            serviceItem2.bottomAnchor.constraint(equalTo: serviceList0View.bottomAnchor),
-            serviceItem2.leadingAnchor.constraint(equalTo: serviceItem1.trailingAnchor),
-            serviceItem2.widthAnchor.constraint(equalTo: serviceList0View.widthAnchor, multiplier: 0.25),
-            serviceItem2Image.topAnchor.constraint(equalTo: serviceItem2.topAnchor, constant: 10.0),
-            serviceItem2Image.centerXAnchor.constraint(equalTo: serviceItem2.centerXAnchor),
-            serviceItem2Image.heightAnchor.constraint(equalToConstant: 40.0),
-            serviceItem2Image.widthAnchor.constraint(equalToConstant: 40.0),
-            tmpa6a080UILabel.centerXAnchor.constraint(equalTo: serviceItem2.centerXAnchor),
-            tmpa6a080UILabel.topAnchor.constraint(equalTo: serviceItem2Image.bottomAnchor, constant: 4.0),
-            tmpa6a360UIView.trailingAnchor.constraint(equalTo: serviceItem2Image.trailingAnchor),
-            tmpa6a360UIView.topAnchor.constraint(equalTo: serviceItem2Image.topAnchor),
-            tmpa6a360UIView.widthAnchor.constraint(equalToConstant: 4.0),
-            tmpa6a360UIView.heightAnchor.constraint(equalToConstant: 4.0),
-            serviceItem3.topAnchor.constraint(equalTo: serviceList0View.topAnchor),
-            serviceItem3.bottomAnchor.constraint(equalTo: serviceList0View.bottomAnchor),
-            serviceItem3.trailingAnchor.constraint(equalTo: serviceList0View.trailingAnchor),
-            serviceItem3.leadingAnchor.constraint(equalTo: serviceItem2.trailingAnchor),
-            serviceItem3Image.topAnchor.constraint(equalTo: serviceItem3.topAnchor, constant: 10.0),
-            serviceItem3Image.centerXAnchor.constraint(equalTo: serviceItem3.centerXAnchor),
-            serviceItem3Image.heightAnchor.constraint(equalToConstant: 40.0),
-            serviceItem3Image.widthAnchor.constraint(equalToConstant: 40.0),
-            tmpa6dfa0UILabel.centerXAnchor.constraint(equalTo: serviceItem3.centerXAnchor),
-            tmpa6dfa0UILabel.topAnchor.constraint(equalTo: serviceItem3Image.bottomAnchor, constant: 4.0),
-            tmpa4e8c0UIView.trailingAnchor.constraint(equalTo: serviceItem3Image.trailingAnchor),
-            tmpa4e8c0UIView.topAnchor.constraint(equalTo: serviceItem3Image.topAnchor),
-            tmpa4e8c0UIView.widthAnchor.constraint(equalToConstant: 4.0),
-            tmpa4e8c0UIView.heightAnchor.constraint(equalToConstant: 4.0),
-            serviceList1View.topAnchor.constraint(equalTo: serviceList0View.bottomAnchor),
-            serviceList1View.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            serviceList1View.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            serviceList1View.heightAnchor.constraint(equalToConstant: 75.0),
-            serviceItem4.topAnchor.constraint(equalTo: serviceList1View.topAnchor),
-            serviceItem4.leadingAnchor.constraint(equalTo: serviceList1View.leadingAnchor),
-            serviceItem4.bottomAnchor.constraint(equalTo: serviceList1View.bottomAnchor),
-            serviceItem4.widthAnchor.constraint(equalTo: serviceList1View.widthAnchor, multiplier: 0.25),
-            serviceItem4Image.topAnchor.constraint(equalTo: serviceItem4.topAnchor, constant: 10.0),
-            serviceItem4Image.centerXAnchor.constraint(equalTo: serviceItem4.centerXAnchor),
-            serviceItem4Image.heightAnchor.constraint(equalToConstant: 40.0),
-            serviceItem4Image.widthAnchor.constraint(equalToConstant: 40.0),
-            tmpa6e290UILabel.centerXAnchor.constraint(equalTo: serviceItem4.centerXAnchor),
-            tmpa6e290UILabel.topAnchor.constraint(equalTo: serviceItem4Image.bottomAnchor, constant: 4.0),
-            tmpa31380UIView.trailingAnchor.constraint(equalTo: serviceItem4Image.trailingAnchor),
-            tmpa31380UIView.topAnchor.constraint(equalTo: serviceItem4Image.topAnchor),
-            tmpa31380UIView.widthAnchor.constraint(equalToConstant: 4.0),
-            tmpa31380UIView.heightAnchor.constraint(equalToConstant: 4.0),
-            serviceItem5.leadingAnchor.constraint(equalTo: serviceItem4.trailingAnchor),
-            serviceItem5.topAnchor.constraint(equalTo: serviceList1View.topAnchor),
-            serviceItem5.bottomAnchor.constraint(equalTo: serviceList1View.bottomAnchor),
-            serviceItem5.widthAnchor.constraint(equalTo: serviceList1View.widthAnchor, multiplier: 0.25),
-            serviceItem5Image.topAnchor.constraint(equalTo: serviceItem5.topAnchor, constant: 10.0),
-            serviceItem5Image.centerXAnchor.constraint(equalTo: serviceItem5.centerXAnchor),
-            serviceItem5Image.heightAnchor.constraint(equalToConstant: 40.0),
-            serviceItem5Image.widthAnchor.constraint(equalToConstant: 40.0),
-            tmpa6e570UILabel.centerXAnchor.constraint(equalTo: serviceItem5.centerXAnchor),
-            tmpa6e570UILabel.topAnchor.constraint(equalTo: serviceItem5Image.bottomAnchor, constant: 4.0),
-            tmpa342e0UIView.trailingAnchor.constraint(equalTo: serviceItem5Image.trailingAnchor),
-            tmpa342e0UIView.topAnchor.constraint(equalTo: serviceItem5Image.topAnchor),
-            tmpa342e0UIView.widthAnchor.constraint(equalToConstant: 4.0),
-            tmpa342e0UIView.heightAnchor.constraint(equalToConstant: 4.0),
-            serviceItem6.topAnchor.constraint(equalTo: serviceList1View.topAnchor),
-            serviceItem6.bottomAnchor.constraint(equalTo: serviceList1View.bottomAnchor),
-            serviceItem6.leadingAnchor.constraint(equalTo: serviceItem5.trailingAnchor),
-            serviceItem6.widthAnchor.constraint(equalTo: serviceList1View.widthAnchor, multiplier: 0.25),
-            serviceItem6Image.topAnchor.constraint(equalTo: serviceItem6.topAnchor, constant: 10.0),
-            serviceItem6Image.centerXAnchor.constraint(equalTo: serviceItem6.centerXAnchor),
-            serviceItem6Image.heightAnchor.constraint(equalToConstant: 40.0),
-            serviceItem6Image.widthAnchor.constraint(equalToConstant: 40.0),
-            tmpa6e850UILabel.centerXAnchor.constraint(equalTo: serviceItem6.centerXAnchor),
-            tmpa6e850UILabel.topAnchor.constraint(equalTo: serviceItem6Image.bottomAnchor, constant: 4.0),
-            tmpa517f0UIView.trailingAnchor.constraint(equalTo: serviceItem6Image.trailingAnchor),
-            tmpa517f0UIView.topAnchor.constraint(equalTo: serviceItem6Image.topAnchor),
-            tmpa517f0UIView.widthAnchor.constraint(equalToConstant: 4.0),
-            tmpa517f0UIView.heightAnchor.constraint(equalToConstant: 4.0),
-            serviceItem7.topAnchor.constraint(equalTo: serviceList1View.topAnchor),
-            serviceItem7.bottomAnchor.constraint(equalTo: serviceList1View.bottomAnchor),
-            serviceItem7.trailingAnchor.constraint(equalTo: serviceList1View.trailingAnchor),
-            serviceItem7.leadingAnchor.constraint(equalTo: serviceItem6.trailingAnchor),
-            serviceItem7Image.topAnchor.constraint(equalTo: serviceItem7.topAnchor, constant: 10.0),
-            serviceItem7Image.centerXAnchor.constraint(equalTo: serviceItem7.centerXAnchor),
-            serviceItem7Image.heightAnchor.constraint(equalToConstant: 40.0),
-            serviceItem7Image.widthAnchor.constraint(equalToConstant: 40.0),
-            tmpa6eb30UILabel.centerXAnchor.constraint(equalTo: serviceItem7.centerXAnchor),
-            tmpa6eb30UILabel.topAnchor.constraint(equalTo: serviceItem7Image.bottomAnchor, constant: 4.0),
-            tmpa581e0UIView.trailingAnchor.constraint(equalTo: serviceItem7Image.trailingAnchor),
-            tmpa581e0UIView.topAnchor.constraint(equalTo: serviceItem7Image.topAnchor),
-            tmpa581e0UIView.widthAnchor.constraint(equalToConstant: 4.0),
-            tmpa581e0UIView.heightAnchor.constraint(equalToConstant: 4.0),
-            introductionView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16.0),
-            introductionView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16.0),
-            introductionView.topAnchor.constraint(equalTo: serviceList1View.bottomAnchor, constant: 8.0),
-            introductionView.heightAnchor.constraint(equalToConstant: 80.0),
-            introductionImage.leadingAnchor.constraint(equalTo: introductionView.leadingAnchor, constant: 10.0),
-            introductionImage.centerYAnchor.constraint(equalTo: introductionView.centerYAnchor),
-            introductionImage.heightAnchor.constraint(equalToConstant: 70.0),
-            introductionImage.widthAnchor.constraint(equalToConstant: 70.0),
-            introductionTitle.topAnchor.constraint(equalTo: introductionView.topAnchor, constant: 8.0),
-            introductionTitle.leadingAnchor.constraint(equalTo: introductionImage.trailingAnchor, constant: 10.0),
-            introductionTitle.heightAnchor.constraint(equalToConstant: 24.0),
-            introductionDescription.topAnchor.constraint(equalTo: introductionTitle.bottomAnchor, constant: 5.0),
-            introductionDescription.leadingAnchor.constraint(equalTo: introductionImage.trailingAnchor, constant: 10.0),
-            introductionDescription.bottomAnchor.constraint(equalTo: introductionView.bottomAnchor, constant: -8.0),
-            introductionDescription.trailingAnchor.constraint(equalTo: introductionView.trailingAnchor, constant: -10.0),
-            newsView.topAnchor.constraint(equalTo: introductionView.bottomAnchor, constant: 8.0),
-            newsView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16.0),
-            newsView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16.0),
-            newsView.heightAnchor.constraint(equalToConstant: 170.0),
-            newsTitle.leadingAnchor.constraint(equalTo: newsView.leadingAnchor),
-            newsTitle.topAnchor.constraint(equalTo: newsView.topAnchor),
-            newsTitle.heightAnchor.constraint(equalToConstant: 24.0),
-            newsTopic1.topAnchor.constraint(equalTo: newsTitle.bottomAnchor, constant: 8.0),
-            newsTopic1.leadingAnchor.constraint(equalTo: newsView.leadingAnchor),
-            newsTopic1.trailingAnchor.constraint(equalTo: newsView.trailingAnchor),
-            newsTopic1.heightAnchor.constraint(equalTo: newsTopic2.heightAnchor),
-            newsTopic1Title.topAnchor.constraint(equalTo: newsTopic1.topAnchor, constant: 8.0),
-            newsTopic1Title.leadingAnchor.constraint(equalTo: newsTopic1.leadingAnchor, constant: 10.0),
-            newsTopic1Title.heightAnchor.constraint(equalToConstant: 18.0),
-            newsTopic1Description.leadingAnchor.constraint(equalTo: newsTopic1Title.leadingAnchor),
-            newsTopic1Description.topAnchor.constraint(equalTo: newsTopic1Title.bottomAnchor, constant: 2.0),
-            newsTopic1Description.bottomAnchor.constraint(equalTo: newsTopic1.bottomAnchor, constant: -8.0),
-            tmpa71a50UIImageView.centerYAnchor.constraint(equalTo: newsTopic1.centerYAnchor),
-            tmpa71a50UIImageView.leadingAnchor.constraint(equalTo: newsTopic1Description.trailingAnchor, constant: 10.0),
-            tmpa71a50UIImageView.heightAnchor.constraint(equalToConstant: 50.0),
-            tmpa71a50UIImageView.widthAnchor.constraint(equalToConstant: 50.0),
-            tmpa71a50UIImageView.trailingAnchor.constraint(equalTo: newsTopic1.trailingAnchor, constant: -10.0),
-            newsTopic2.topAnchor.constraint(equalTo: newsTopic1.bottomAnchor, constant: 8.0),
-            newsTopic2.leadingAnchor.constraint(equalTo: newsView.leadingAnchor),
-            newsTopic2.trailingAnchor.constraint(equalTo: newsView.trailingAnchor),
-            newsTopic2.bottomAnchor.constraint(equalTo: newsView.bottomAnchor),
-            newsTopic2Title.topAnchor.constraint(equalTo: newsTopic2.topAnchor, constant: 8.0),
-            newsTopic2Title.leadingAnchor.constraint(equalTo: newsTopic2.leadingAnchor, constant: 10.0),
-            newsTopic2Title.heightAnchor.constraint(equalToConstant: 18.0),
-            newsTopic2Description.leadingAnchor.constraint(equalTo: newsTopic2Title.leadingAnchor),
-            newsTopic2Description.topAnchor.constraint(equalTo: newsTopic2Title.bottomAnchor, constant: 2.0),
-            newsTopic2Description.bottomAnchor.constraint(equalTo: newsTopic2.bottomAnchor, constant: -8.0),
-            tmpa72bb0UIImageView.centerYAnchor.constraint(equalTo: newsTopic2.centerYAnchor),
-            tmpa72bb0UIImageView.leadingAnchor.constraint(equalTo: newsTopic2Description.trailingAnchor, constant: 10.0),
-            tmpa72bb0UIImageView.heightAnchor.constraint(equalToConstant: 50.0),
-            tmpa72bb0UIImageView.widthAnchor.constraint(equalToConstant: 50.0),
-            tmpa72bb0UIImageView.trailingAnchor.constraint(equalTo: newsTopic2.trailingAnchor, constant: -10.0),
-            optionView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            optionView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            optionView.topAnchor.constraint(equalTo: newsView.bottomAnchor, constant: 8.0),
-            optionRow0.topAnchor.constraint(equalTo: optionView.topAnchor),
-            optionRow0.leadingAnchor.constraint(equalTo: optionView.leadingAnchor),
-            optionRow0.trailingAnchor.constraint(equalTo: optionView.trailingAnchor),
-            optionRow0.heightAnchor.constraint(equalToConstant: 50.0),
-            tmpa74120UILabel.leadingAnchor.constraint(equalTo: optionRow0.leadingAnchor, constant: 16.0),
-            tmpa74120UILabel.centerYAnchor.constraint(equalTo: optionRow0.centerYAnchor),
-            tmpa74620UISwitch.centerYAnchor.constraint(equalTo: optionRow0.centerYAnchor),
-            tmpa74620UISwitch.trailingAnchor.constraint(equalTo: optionRow0.trailingAnchor, constant: -16.0),
-            tmp805290UIView.leadingAnchor.constraint(equalTo: optionRow0.leadingAnchor, constant: 16.0),
-            tmp805290UIView.trailingAnchor.constraint(equalTo: optionRow0.trailingAnchor, constant: -16.0),
-            tmp805290UIView.bottomAnchor.constraint(equalTo: optionRow0.bottomAnchor),
-            tmp805290UIView.heightAnchor.constraint(equalToConstant: 1.0),
-            optionRow1.topAnchor.constraint(equalTo: optionRow0.bottomAnchor),
-            optionRow1.leadingAnchor.constraint(equalTo: optionView.leadingAnchor),
-            optionRow1.trailingAnchor.constraint(equalTo: optionView.trailingAnchor),
-            optionRow1.heightAnchor.constraint(equalToConstant: 50.0),
-            tmp80bc70UILabel.leadingAnchor.constraint(equalTo: optionRow1.leadingAnchor, constant: 16.0),
-            tmp80bc70UILabel.centerYAnchor.constraint(equalTo: optionRow1.centerYAnchor),
-            tmp808e30UISwitch.centerYAnchor.constraint(equalTo: optionRow1.centerYAnchor),
-            tmp808e30UISwitch.trailingAnchor.constraint(equalTo: optionRow1.trailingAnchor, constant: -16.0),
-            tmp811f90UIView.leadingAnchor.constraint(equalTo: optionRow1.leadingAnchor, constant: 16.0),
-            tmp811f90UIView.trailingAnchor.constraint(equalTo: optionRow1.trailingAnchor, constant: -16.0),
-            tmp811f90UIView.bottomAnchor.constraint(equalTo: optionRow1.bottomAnchor),
-            tmp811f90UIView.heightAnchor.constraint(equalToConstant: 1.0),
-        ])
+        serviceItem0.snp.makeConstraints { make in
+            make.top.leading.bottom.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.25)
+        }
+        serviceItem0Image.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10.0)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(40.0)
+        }
+        tmpa668d0UILabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(serviceItem0Image.snp.bottom).offset(4.0)
+        }
+        tmpa2fb30UIView.snp.makeConstraints { make in
+            make.trailing.top.equalTo(serviceItem0Image)
+            make.width.height.equalTo(4.0)
+        }
+        serviceItem1.snp.makeConstraints { make in
+            make.leading.equalTo(serviceItem0.snp.trailing)
+            make.top.bottom.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.25)
+        }
+        serviceItem1Image.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10.0)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(40.0)
+        }
+        tmpa67f30UILabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(serviceItem1Image.snp.bottom).offset(4.0)
+        }
+        tmpa68210UIView.snp.makeConstraints { make in
+            make.trailing.top.equalTo(serviceItem1Image)
+            make.width.height.equalTo(4.0)
+        }
+        serviceItem2.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.equalTo(serviceItem1.snp.trailing)
+            make.width.equalToSuperview().multipliedBy(0.25)
+        }
+        serviceItem2Image.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10.0)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(40.0)
+        }
+        tmpa6a080UILabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(serviceItem2Image.snp.bottom).offset(4.0)
+        }
+        tmpa6a360UIView.snp.makeConstraints { make in
+            make.trailing.top.equalTo(serviceItem2Image)
+            make.width.height.equalTo(4.0)
+        }
+        serviceItem3.snp.makeConstraints { make in
+            make.top.bottom.trailing.equalToSuperview()
+            make.leading.equalTo(serviceItem2.snp.trailing)
+        }
+        serviceItem3Image.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10.0)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(40.0)
+        }
+        tmpa6dfa0UILabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(serviceItem3Image.snp.bottom).offset(4.0)
+        }
+        tmpa4e8c0UIView.snp.makeConstraints { make in
+            make.trailing.top.equalTo(serviceItem3Image)
+            make.width.height.equalTo(4.0)
+        }
+        serviceList1View.snp.makeConstraints { make in
+            make.top.equalTo(serviceList0View.snp.bottom)
+            make.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+            make.height.equalTo(75.0)
+        }
+        serviceItem4.snp.makeConstraints { make in
+            make.top.leading.bottom.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.25)
+        }
+        serviceItem4Image.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10.0)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(40.0)
+        }
+        tmpa6e290UILabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(serviceItem4Image.snp.bottom).offset(4.0)
+        }
+        tmpa31380UIView.snp.makeConstraints { make in
+            make.trailing.top.equalTo(serviceItem4Image)
+            make.width.height.equalTo(4.0)
+        }
+        serviceItem5.snp.makeConstraints { make in
+            make.leading.equalTo(serviceItem4.snp.trailing)
+            make.top.bottom.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.25)
+        }
+        serviceItem5Image.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10.0)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(40.0)
+        }
+        tmpa6e570UILabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(serviceItem5Image.snp.bottom).offset(4.0)
+        }
+        tmpa342e0UIView.snp.makeConstraints { make in
+            make.trailing.top.equalTo(serviceItem5Image)
+            make.width.height.equalTo(4.0)
+        }
+        serviceItem6.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.equalTo(serviceItem5.snp.trailing)
+            make.width.equalToSuperview().multipliedBy(0.25)
+        }
+        serviceItem6Image.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10.0)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(40.0)
+        }
+        tmpa6e850UILabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(serviceItem6Image.snp.bottom).offset(4.0)
+        }
+        tmpa517f0UIView.snp.makeConstraints { make in
+            make.trailing.top.equalTo(serviceItem6Image)
+            make.width.height.equalTo(4.0)
+        }
+        serviceItem7.snp.makeConstraints { make in
+            make.top.bottom.trailing.equalToSuperview()
+            make.leading.equalTo(serviceItem6.snp.trailing)
+        }
+        serviceItem7Image.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10.0)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(40.0)
+        }
+        tmpa6eb30UILabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(serviceItem7Image.snp.bottom).offset(4.0)
+        }
+        tmpa581e0UIView.snp.makeConstraints { make in
+            make.trailing.top.equalTo(serviceItem7Image)
+            make.width.height.equalTo(4.0)
+        }
+        introductionView.snp.makeConstraints { make in
+            make.leading.equalTo(self.safeAreaLayoutGuide).offset(16.0)
+            make.trailing.equalTo(self.safeAreaLayoutGuide).offset(-16.0)
+            make.top.equalTo(serviceList1View.snp.bottom).offset(8.0)
+            make.height.equalTo(80.0)
+        }
+        introductionImage.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(10.0)
+            make.centerY.equalToSuperview()
+            make.height.width.equalTo(70.0)
+        }
+        introductionTitle.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(8.0)
+            make.leading.equalTo(introductionImage.snp.trailing).offset(10.0)
+            make.height.equalTo(24.0)
+        }
+        introductionDescription.snp.makeConstraints { make in
+            make.top.equalTo(introductionTitle.snp.bottom).offset(5.0)
+            make.leading.equalTo(introductionImage.snp.trailing).offset(10.0)
+            make.bottom.equalTo(-8.0)
+            make.trailing.equalTo(-10.0)
+        }
+        newsView.snp.makeConstraints { make in
+            make.top.equalTo(introductionView.snp.bottom).offset(8.0)
+            make.leading.equalTo(self.safeAreaLayoutGuide).offset(16.0)
+            make.trailing.equalTo(self.safeAreaLayoutGuide).offset(-16.0)
+            make.height.equalTo(170.0)
+        }
+        newsTitle.snp.makeConstraints { make in
+            make.leading.top.equalToSuperview()
+            make.height.equalTo(24.0)
+        }
+        newsTopic1.snp.makeConstraints { make in
+            make.top.equalTo(newsTitle.snp.bottom).offset(8.0)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(newsTopic2).multipliedBy(1.0)
+        }
+        newsTopic1Title.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(8.0)
+            make.leading.equalToSuperview().offset(10.0)
+            make.height.equalTo(18.0)
+        }
+        newsTopic1Description.snp.makeConstraints { make in
+            make.leading.equalTo(newsTopic1Title)
+            make.top.equalTo(newsTopic1Title.snp.bottom).offset(2.0)
+            make.bottom.equalTo(-8.0)
+        }
+        tmpa71a50UIImageView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(newsTopic1Description.snp.trailing).offset(10.0)
+            make.height.width.equalTo(50.0)
+            make.trailing.equalTo(-10.0)
+        }
+        newsTopic2.snp.makeConstraints { make in
+            make.top.equalTo(newsTopic1.snp.bottom).offset(8.0)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+        newsTopic2Title.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(8.0)
+            make.leading.equalToSuperview().offset(10.0)
+            make.height.equalTo(18.0)
+        }
+        newsTopic2Description.snp.makeConstraints { make in
+            make.leading.equalTo(newsTopic2Title)
+            make.top.equalTo(newsTopic2Title.snp.bottom).offset(2.0)
+            make.bottom.equalTo(-8.0)
+        }
+        tmpa72bb0UIImageView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(newsTopic2Description.snp.trailing).offset(10.0)
+            make.height.width.equalTo(50.0)
+            make.trailing.equalTo(-10.0)
+        }
+        optionView.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+            make.top.equalTo(newsView.snp.bottom).offset(8.0)
+        }
+        optionRow0.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(50.0)
+        }
+        tmpa74120UILabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16.0)
+            make.centerY.equalToSuperview()
+        }
+        tmpa74620UISwitch.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalTo(-16.0)
+        }
+        tmp805290UIView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16.0)
+            make.trailing.equalTo(-16.0)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(1.0)
+        }
+        optionRow1.snp.makeConstraints { make in
+            make.top.equalTo(optionRow0.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(50.0)
+        }
+        tmp80bc70UILabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16.0)
+            make.centerY.equalToSuperview()
+        }
+        tmp808e30UISwitch.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalTo(-16.0)
+        }
+        tmp811f90UIView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16.0)
+            make.trailing.equalTo(-16.0)
+            make.bottom.equalToSuperview()
+            make.height.equalTo(1.0)
+        }
     }
-
 }
 
 import SwiftUI
