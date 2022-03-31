@@ -14,9 +14,9 @@
         "package": "SwiftLayout",
         "repositoryURL": "https://github.com/ioskrew/SwiftLayout",
         "state": {
-          "branch": "develop",
-          "revision": "9e6909d0e9f651107b807fc8225b0e20ae44b394",
-          "version": null
+          "branch": null,
+          "revision": "8dd35ad3e106a7317589011def3e9910de5521c4",
+          "version": "2.5.0"
         }
       }
     ]

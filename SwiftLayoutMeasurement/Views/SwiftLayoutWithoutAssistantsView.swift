@@ -273,487 +273,503 @@ class SwiftLayoutWithoutAssistantsView: UIView, Layoutable {
         let tmp811f90UIView = UIView()
         tmp811f90UIView.backgroundColor = .separator
         
-        return self.config {
-            $0.backgroundColor = .systemBackground
-        }.sublayout {
+        return self {
             headerView.anchors {
-                Anchors(.top, .leading, .trailing).equalTo(self.safeAreaLayoutGuide)
-                Anchors(.height).equalTo(constant: 60.0)
+                Anchors.top.equalTo(self.safeAreaLayoutGuide)
+                Anchors.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+                Anchors.height.equalTo(constant: 60.0)
             }.sublayout {
                 headerLabel.anchors {
-                    Anchors(.centerY)
-                    Anchors(.leading).equalTo(constant: 16.0)
+                    Anchors.centerY
+                    Anchors.leading.equalToSuper(constant: 16.0)
                 }
                 
                 headerButton0.anchors {
-                    Anchors(.centerY)
-                    Anchors(.width, .height).equalTo(constant: 40.0)
+                    Anchors.centerY
+                    Anchors.size(width: 40.0, height: 40.0)
                 }
                 
                 headerButton1.anchors {
-                    Anchors(.centerY)
-                    Anchors(.leading).equalTo(headerButton0, attribute: .trailing, constant: 2.0)
-                    Anchors(.width, .height).equalTo(constant: 40.0)
+                    Anchors.centerY
+                    Anchors.leading.equalTo(headerButton0, attribute: .trailing, constant: 2.0)
+                    Anchors.size(width: 40.0, height: 40.0)
                 }
                 
                 headerButton2.anchors {
-                    Anchors(.centerY)
-                    Anchors(.leading).equalTo(headerButton1, attribute: .trailing, constant: 2.0)
-                    Anchors(.height, .width).equalTo(constant: 40.0)
+                    Anchors.centerY
+                    Anchors.leading.equalTo(headerButton1, attribute: .trailing, constant: 2.0)
+                    Anchors.size(width: 40.0, height: 40.0)
                 }
                 
                 headerButton3.anchors {
-                    Anchors(.centerY)
-                    Anchors(.leading).equalTo(headerButton2, attribute: .trailing, constant: 2.0)
-                    Anchors(.height, .width).equalTo(constant: 40.0)
-                    Anchors(.trailing).equalTo(constant: -8.0)
+                    Anchors.centerY
+                    Anchors.leading.equalTo(headerButton2, attribute: .trailing, constant: 2.0)
+                    Anchors.size(width: 40.0, height: 40.0)
+                    Anchors.trailing.equalToSuper(constant: -8.0)
                 }
             }
             
             walletView.anchors {
-                Anchors(.top).equalTo(headerView, attribute: .bottom)
-                Anchors(.leading, .trailing).equalTo(self.safeAreaLayoutGuide)
-                Anchors(.height).equalTo(constant: 190.0)
+                Anchors.top.equalTo(headerView, attribute: .bottom)
+                Anchors.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+                Anchors.height.equalTo(constant: 190.0)
             }.sublayout {
                 walletHeaderView.anchors {
-                    Anchors(.top, .leading, .trailing)
-                    Anchors(.height).equalTo(constant: 60.0)
+                    Anchors.top
+                    Anchors.leading.trailing
+                    Anchors.height.equalTo(constant: 60.0)
                 }.sublayout {
                     walletHeaderTitle.anchors {
-                        Anchors(.leading).equalTo(constant: 16.0)
-                        Anchors(.centerY)
-                        Anchors(.height).equalTo(constant: 40.0)
+                        Anchors.leading.equalToSuper(constant: 16.0)
+                        Anchors.centerY
+                        Anchors.height.equalTo(constant: 40.0)
                     }
-
+                    
                     walletHeaderTitleArrow.anchors {
-                        Anchors(.leading).equalTo(walletHeaderTitle, attribute: .trailing)
-                        Anchors(.centerY).equalTo(walletHeaderTitle)
-                        Anchors(.height, .width).equalTo(constant: 20.0)
+                        Anchors.leading.equalTo(walletHeaderTitle, attribute: .trailing)
+                        Anchors.centerY.equalTo(walletHeaderTitle)
+                        Anchors.size(width: 20.0, height: 20.0)
                     }
-
+                    
                     walletHeaderCertificationButton.anchors {
-                        Anchors(.centerY)
-                        Anchors.size(CGSize(width: 135, height: 31))
+                        Anchors.centerY
+                        Anchors.size(width: 135, height: 31)
                     }
-
+                    
                     walletHeaderButtonSeparator.anchors {
-                        Anchors(.leading).equalTo(walletHeaderCertificationButton, attribute: .trailing, constant: 3.0)
-                        Anchors(.centerY)
-                        Anchors(.height).equalTo(constant: 15.0)
-                        Anchors(.width).equalTo(constant: 1.0)
+                        Anchors.leading.equalTo(walletHeaderCertificationButton, attribute: .trailing, constant: 3.0)
+                        Anchors.centerY
+                        Anchors.height.equalTo(constant: 15.0)
+                        Anchors.width.equalTo(constant: 1.0)
                     }
-
+                    
                     walletHeaderQRCheckinButton.anchors {
-                        Anchors(.centerY)
-                        Anchors(.leading).equalTo(walletHeaderButtonSeparator, attribute: .trailing, constant: 3.0)
-                        Anchors(.trailing).equalTo(constant: -8.0)
-                        Anchors.size(CGSize(width: 130, height: 31))
+                        Anchors.centerY
+                        Anchors.leading.equalTo(walletHeaderButtonSeparator, attribute: .trailing, constant: 3.0)
+                        Anchors.trailing.equalToSuper(constant: -8.0)
+                        Anchors.size(width: 130, height: 31)
                     }
                 }
-
+                
                 walletNoticeView.anchors {
-                    Anchors(.centerX)
-                    Anchors(.width).equalTo(walletView, constant: -32.0)
-                    Anchors(.top).equalTo(walletHeaderView, attribute: .bottom)
-                    Anchors(.height).equalTo(constant: 40.0)
+                    Anchors.centerX
+                    Anchors.width.equalTo(walletView, constant: -32.0)
+                    Anchors.top.equalTo(walletHeaderView, attribute: .bottom)
+                    Anchors.height.equalTo(constant: 40.0)
                 }.sublayout {
                     walletNoticeIcon.anchors {
-                        Anchors(.centerY)
-                        Anchors(.leading).equalTo(constant: 10.0)
-                        Anchors(.height, .width).equalTo(constant: 20.0)
+                        Anchors.centerY
+                        Anchors.leading.equalToSuper(constant: 10.0)
+                        Anchors.size(width: 20.0, height: 20.0)
                     }
                     
                     walletNoticeTitle.anchors {
-                        Anchors(.leading).equalTo(walletNoticeIcon, attribute: .trailing, constant: 5.0)
-                        Anchors(.centerY)
+                        Anchors.leading.equalTo(walletNoticeIcon, attribute: .trailing, constant: 5.0)
+                        Anchors.centerY
                     }
                     
                     walletNoticeArrow.anchors {
-                        Anchors(.centerY)
-                        Anchors(.width, .height).equalTo(constant: 15.0)
-                        Anchors(.trailing).equalTo(constant: -10.0)
+                        Anchors.centerY
+                        Anchors.width.height.equalTo(constant: 15.0)
+                        Anchors.trailing.equalToSuper(constant: -10.0)
                     }
                 }
-
+                
                 walletPayView.anchors {
-                    Anchors(.leading, .trailing, .bottom)
-                    Anchors(.top).equalTo(walletNoticeView, attribute: .bottom, constant: 15.0)
+                    Anchors.leading.trailing
+                    Anchors.bottom
+                    Anchors.top.equalTo(walletNoticeView, attribute: .bottom, constant: 15.0)
                 }.sublayout {
                     GroupLayout {
                         walletPayIcon.anchors {
-                            Anchors(.leading).equalTo(constant: 16.0)
-                            Anchors(.centerY).equalTo(walletPayTitle)
-                            Anchors(.width, .height).equalTo(constant: 15.0)
+                            Anchors.leading.equalToSuper(constant: 16.0)
+                            Anchors.centerY.equalTo(walletPayTitle)
+                            Anchors.size(width: 15.0, height: 15.0)
                         }
                         
                         walletPayTitle.anchors {
-                            Anchors(.top)
-                            Anchors(.leading).equalTo(walletPayIcon, attribute: .trailing, constant: 2.0)
+                            Anchors.top
+                            Anchors.leading.equalTo(walletPayIcon, attribute: .trailing, constant: 2.0)
                         }
                         
                         walletPayBalance.anchors {
-                            Anchors(.centerY).equalTo(walletPayTitle)
-                            Anchors(.trailing).equalTo(constant: -16.0)
+                            Anchors.centerY.equalTo(walletPayTitle)
+                            Anchors.trailing.equalToSuper(constant: -16.0)
                         }
                     }
-
+                    
                     GroupLayout {
                         walletPayTransferButton.anchors {
-                            Anchors(.leading).equalTo(constant: 6.0)
-                            Anchors(.top).equalTo(walletPayTitle, attribute: .bottom, constant: 10.0)
-                            Anchors.size(CGSize(width: 75, height: 31))
+                            Anchors.leading.equalToSuper(constant: 6.0)
+                            Anchors.top.equalTo(walletPayTitle, attribute: .bottom, constant: 10.0)
+                            Anchors.size(width: 75, height: 31)
                         }
-
+                        
                         walletPayButtonSeparator0.anchors {
-                            Anchors(.leading).equalTo(walletPayTransferButton, attribute: .trailing)
-                            Anchors(.centerY).equalTo(walletPayTransferButton)
-                            Anchors(.height).equalTo(constant: 15.0)
-                            Anchors(.width).equalTo(constant: 1.0)
+                            Anchors.leading.equalTo(walletPayTransferButton, attribute: .trailing)
+                            Anchors.centerY.equalTo(walletPayTransferButton)
+                            Anchors.height.equalTo(constant: 15.0)
+                            Anchors.width.equalTo(constant: 1.0)
                         }
-
+                        
                         walletPayPaymentButton.anchors {
-                            Anchors(.centerY).equalTo(walletPayTransferButton)
-                            Anchors(.leading).equalTo(walletPayButtonSeparator0, attribute: .trailing)
-                            Anchors.size(CGSize(width: 80, height: 31))
+                            Anchors.centerY.equalTo(walletPayTransferButton)
+                            Anchors.leading.equalTo(walletPayButtonSeparator0, attribute: .trailing)
+                            Anchors.size(width: 80, height: 31)
                         }
-
+                        
                         walletPayButtonSeparator1.anchors {
-                            Anchors(.centerY).equalTo(walletPayTransferButton)
-                            Anchors(.leading).equalTo(walletPayPaymentButton, attribute: .trailing)
-                            Anchors(.width).equalTo(constant: 1.0)
-                            Anchors(.height).equalTo(constant: 15.0)
+                            Anchors.centerY.equalTo(walletPayTransferButton)
+                            Anchors.leading.equalTo(walletPayPaymentButton, attribute: .trailing)
+                            Anchors.width.equalTo(constant: 1.0)
+                            Anchors.height.equalTo(constant: 15.0)
                         }
-
+                        
                         walletPayAssetsButton.anchors {
-                            Anchors(.leading).equalTo(walletPayButtonSeparator1, attribute: .trailing)
-                            Anchors(.centerY).equalTo(walletPayPaymentButton)
-                            Anchors.size(CGSize(width: 66, height: 31))
+                            Anchors.leading.equalTo(walletPayButtonSeparator1, attribute: .trailing)
+                            Anchors.centerY.equalTo(walletPayPaymentButton)
+                            Anchors.size(width: 66, height: 31)
                         }
-
+                        
                         walletPayPurchasesButton.anchors {
-                            Anchors(.centerY).equalTo(walletPayTransferButton)
-                            Anchors(.trailing).equalTo(constant: -5.0)
-                            Anchors.size(CGSize(width: 130, height: 32))
+                            Anchors.centerY.equalTo(walletPayTransferButton)
+                            Anchors.trailing.equalToSuper(constant: -5.0)
+                            Anchors.size(width: 130, height: 32)
                         }
                     }
                 }
             }
-
+            
             serviceList0View.anchors {
-                Anchors(.leading, .trailing).equalTo(self.safeAreaLayoutGuide)
-                Anchors(.top).equalTo(walletView, attribute: .bottom, constant: 15.0)
-                Anchors(.height).equalTo(constant: 75.0)
+                Anchors.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+                Anchors.top.equalTo(walletView, attribute: .bottom, constant: 15.0)
+                Anchors.height.equalTo(constant: 75.0)
             }.sublayout {
                 serviceItem0.anchors {
-                    Anchors(.top, .leading, .bottom)
-                    Anchors(.width).setMultiplier(0.25)
+                    Anchors.top.bottom
+                    Anchors.leading
+                    Anchors.width.multiplier(0.25)
                 }.sublayout {
                     serviceItem0Image.anchors {
-                        Anchors(.top).equalTo(constant: 10.0)
-                        Anchors(.centerX)
-                        Anchors(.height, .width).equalTo(constant: 40.0)
+                        Anchors.top.equalToSuper(constant: 10.0)
+                        Anchors.centerX
+                        Anchors.size(width: 40.0, height: 40.0)
                     }
                     
                     tmpa668d0UILabel.anchors {
-                        Anchors(.centerX)
-                        Anchors(.top).equalTo(serviceItem0Image, attribute: .bottom, constant: 4.0)
+                        Anchors.centerX
+                        Anchors.top.equalTo(serviceItem0Image, attribute: .bottom, constant: 4.0)
                     }
                     
                     tmpa2fb30UIView.anchors {
-                        Anchors(.trailing, .top).equalTo(serviceItem0Image)
-                        Anchors(.width, .height).equalTo(constant: 4.0)
+                        Anchors.trailing.equalTo(serviceItem0Image)
+                        Anchors.top.equalTo(serviceItem0Image)
+                        Anchors.size(width: 4.0, height: 4.0)
                     }
                 }
                 
                 serviceItem1.anchors {
-                    Anchors(.leading).equalTo(serviceItem0, attribute: .trailing)
-                    Anchors(.top, .bottom)
-                    Anchors(.width).setMultiplier(0.25)
+                    Anchors.leading.equalTo(serviceItem0, attribute: .trailing)
+                    Anchors.top.bottom
+                    Anchors.width.multiplier(0.25)
                 }.sublayout {
                     serviceItem1Image.anchors {
-                        Anchors(.top).equalTo(constant: 10.0)
-                        Anchors(.centerX)
-                        Anchors(.height, .width).equalTo(constant: 40.0)
+                        Anchors.top.equalToSuper(constant: 10.0)
+                        Anchors.centerX
+                        Anchors.size(width: 40.0, height: 40.0)
                     }
                     
                     tmpa67f30UILabel.anchors {
-                        Anchors(.centerX)
-                        Anchors(.top).equalTo(serviceItem1Image, attribute: .bottom, constant: 4.0)
+                        Anchors.centerX
+                        Anchors.top.equalTo(serviceItem1Image, attribute: .bottom, constant: 4.0)
                     }
                     
                     tmpa68210UIView.anchors {
-                        Anchors(.trailing, .top).equalTo(serviceItem1Image)
-                        Anchors(.width, .height).equalTo(constant: 4.0)
+                        Anchors.trailing.equalTo(serviceItem1Image)
+                        Anchors.top.equalTo(serviceItem1Image)
+                        Anchors.size(width: 4.0, height: 4.0)
                     }
                 }
                 
                 serviceItem2.anchors {
-                    Anchors(.top, .bottom)
-                    Anchors(.leading).equalTo(serviceItem1, attribute: .trailing)
-                    Anchors(.width).setMultiplier(0.25)
+                    Anchors.top.bottom
+                    Anchors.leading.equalTo(serviceItem1, attribute: .trailing)
+                    Anchors.width.multiplier(0.25)
                 }.sublayout {
                     serviceItem2Image.anchors {
-                        Anchors(.top).equalTo(constant: 10.0)
-                        Anchors(.centerX)
-                        Anchors(.height, .width).equalTo(constant: 40.0)
+                        Anchors.top.equalToSuper(constant: 10.0)
+                        Anchors.centerX
+                        Anchors.size(width: 40.0, height: 40.0)
                     }
                     
                     tmpa6a080UILabel.anchors {
-                        Anchors(.centerX)
-                        Anchors(.top).equalTo(serviceItem2Image, attribute: .bottom, constant: 4.0)
+                        Anchors.centerX
+                        Anchors.top.equalTo(serviceItem2Image, attribute: .bottom, constant: 4.0)
                     }
                     
                     tmpa6a360UIView.anchors {
-                        Anchors(.trailing, .top).equalTo(serviceItem2Image)
-                        Anchors(.width, .height).equalTo(constant: 4.0)
+                        Anchors.trailing.equalTo(serviceItem2Image)
+                        Anchors.top.equalTo(serviceItem2Image)
+                        Anchors.size(width: 4.0, height: 4.0)
                     }
                 }
                 
                 serviceItem3.anchors {
-                    Anchors(.top, .bottom, .trailing)
-                    Anchors(.leading).equalTo(serviceItem2, attribute: .trailing)
+                    Anchors.top.bottom
+                    Anchors.trailing
+                    Anchors.leading.equalTo(serviceItem2, attribute: .trailing)
                 }.sublayout {
                     serviceItem3Image.anchors {
-                        Anchors(.top).equalTo(constant: 10.0)
-                        Anchors(.centerX)
-                        Anchors(.height, .width).equalTo(constant: 40.0)
+                        Anchors.top.equalToSuper(constant: 10.0)
+                        Anchors.centerX
+                        Anchors.size(width: 40.0, height: 40.0)
                     }
                     
                     tmpa6dfa0UILabel.anchors {
-                        Anchors(.centerX)
-                        Anchors(.top).equalTo(serviceItem3Image, attribute: .bottom, constant: 4.0)
+                        Anchors.centerX
+                        Anchors.top.equalTo(serviceItem3Image, attribute: .bottom, constant: 4.0)
                     }
                     
                     tmpa4e8c0UIView.anchors {
-                        Anchors(.trailing, .top).equalTo(serviceItem3Image)
-                        Anchors(.width, .height).equalTo(constant: 4.0)
+                        Anchors.trailing.equalTo(serviceItem3Image)
+                        Anchors.top.equalTo(serviceItem3Image)
+                        Anchors.size(width: 4.0, height: 4.0)
                     }
                 }
             }
-
+            
             serviceList1View.anchors {
-                Anchors(.top).equalTo(serviceList0View, attribute: .bottom)
-                Anchors(.leading, .trailing).equalTo(self.safeAreaLayoutGuide)
-                Anchors(.height).equalTo(constant: 75.0)
+                Anchors.top.equalTo(serviceList0View, attribute: .bottom)
+                Anchors.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+                Anchors.height.equalTo(constant: 75.0)
             }.sublayout {
                 serviceItem4.anchors {
-                    Anchors(.top, .leading, .bottom)
-                    Anchors(.width).setMultiplier(0.25)
+                    Anchors.top.bottom
+                    Anchors.leading
+                    Anchors.width.multiplier(0.25)
                 }.sublayout {
                     serviceItem4Image.anchors {
-                        Anchors(.top).equalTo(constant: 10.0)
-                        Anchors(.centerX)
-                        Anchors(.height, .width).equalTo(constant: 40.0)
+                        Anchors.top.equalToSuper(constant: 10.0)
+                        Anchors.centerX
+                        Anchors.size(width: 40.0, height: 40.0)
                     }
                     
                     tmpa6e290UILabel.anchors {
-                        Anchors(.centerX)
-                        Anchors(.top).equalTo(serviceItem4Image, attribute: .bottom, constant: 4.0)
+                        Anchors.centerX
+                        Anchors.top.equalTo(serviceItem4Image, attribute: .bottom, constant: 4.0)
                     }
                     
                     tmpa31380UIView.anchors {
-                        Anchors(.trailing, .top).equalTo(serviceItem4Image)
-                        Anchors(.width, .height).equalTo(constant: 4.0)
+                        Anchors.trailing.equalTo(serviceItem4Image)
+                        Anchors.top.equalTo(serviceItem4Image)
+                        Anchors.size(width: 4.0, height: 4.0)
                     }
                 }
                 
                 serviceItem5.anchors {
-                    Anchors(.leading).equalTo(serviceItem4, attribute: .trailing)
-                    Anchors(.top, .bottom)
-                    Anchors(.width).setMultiplier(0.25)
+                    Anchors.leading.equalTo(serviceItem4, attribute: .trailing)
+                    Anchors.top.bottom
+                    Anchors.width.multiplier(0.25)
                 }.sublayout {
                     serviceItem5Image.anchors {
-                        Anchors(.top).equalTo(constant: 10.0)
-                        Anchors(.centerX)
-                        Anchors(.height, .width).equalTo(constant: 40.0)
+                        Anchors.top.equalToSuper(constant: 10.0)
+                        Anchors.centerX
+                        Anchors.size(width: 40.0, height: 40.0)
                     }
                     
                     tmpa6e570UILabel.anchors {
-                        Anchors(.centerX)
-                        Anchors(.top).equalTo(serviceItem5Image, attribute: .bottom, constant: 4.0)
+                        Anchors.centerX
+                        Anchors.top.equalTo(serviceItem5Image, attribute: .bottom, constant: 4.0)
                     }
                     
                     tmpa342e0UIView.anchors {
-                        Anchors(.trailing, .top).equalTo(serviceItem5Image)
-                        Anchors(.width, .height).equalTo(constant: 4.0)
+                        Anchors.trailing.equalTo(serviceItem5Image)
+                        Anchors.top.equalTo(serviceItem5Image)
+                        Anchors.size(width: 4.0, height: 4.0)
                     }
                 }
                 
                 serviceItem6.anchors {
-                    Anchors(.top, .bottom)
-                    Anchors(.leading).equalTo(serviceItem5, attribute: .trailing)
-                    Anchors(.width).setMultiplier(0.25)
+                    Anchors.top.bottom
+                    Anchors.leading.equalTo(serviceItem5, attribute: .trailing)
+                    Anchors.width.multiplier(0.25)
                 }.sublayout {
                     serviceItem6Image.anchors {
-                        Anchors(.top).equalTo(constant: 10.0)
-                        Anchors(.centerX)
-                        Anchors(.height, .width).equalTo(constant: 40.0)
+                        Anchors.top.equalToSuper(constant: 10.0)
+                        Anchors.centerX
+                        Anchors.size(width: 40.0, height: 40.0)
                     }
                     
                     tmpa6e850UILabel.anchors {
-                        Anchors(.centerX)
-                        Anchors(.top).equalTo(serviceItem6Image, attribute: .bottom, constant: 4.0)
+                        Anchors.centerX
+                        Anchors.top.equalTo(serviceItem6Image, attribute: .bottom, constant: 4.0)
                     }
                     
                     tmpa517f0UIView.anchors {
-                        Anchors(.trailing, .top).equalTo(serviceItem6Image)
-                        Anchors(.width, .height).equalTo(constant: 4.0)
+                        Anchors.trailing.equalTo(serviceItem6Image)
+                        Anchors.top.equalTo(serviceItem6Image)
+                        Anchors.size(width: 4.0, height: 4.0)
                     }
                 }
                 
                 serviceItem7.anchors {
-                    Anchors(.top, .bottom, .trailing)
-                    Anchors(.leading).equalTo(serviceItem6, attribute: .trailing)
+                    Anchors.top.bottom
+                    Anchors.trailing
+                    Anchors.leading.equalTo(serviceItem6, attribute: .trailing)
                 }.sublayout {
                     serviceItem7Image.anchors {
-                        Anchors(.top).equalTo(constant: 10.0)
-                        Anchors(.centerX)
-                        Anchors(.height, .width).equalTo(constant: 40.0)
+                        Anchors.top.equalToSuper(constant: 10.0)
+                        Anchors.centerX
+                        Anchors.size(width: 40.0, height: 40.0)
                     }
                     
                     tmpa6eb30UILabel.anchors {
-                        Anchors(.centerX)
-                        Anchors(.top).equalTo(serviceItem7Image, attribute: .bottom, constant: 4.0)
+                        Anchors.centerX
+                        Anchors.top.equalTo(serviceItem7Image, attribute: .bottom, constant: 4.0)
                     }
                     
                     tmpa581e0UIView.anchors {
-                        Anchors(.trailing, .top).equalTo(serviceItem7Image)
-                        Anchors(.width, .height).equalTo(constant: 4.0)
+                        Anchors.trailing.equalTo(serviceItem7Image)
+                        Anchors.top.equalTo(serviceItem7Image)
+                        Anchors.size(width: 4.0, height: 4.0)
                     }
                 }
             }
-
+            
             introductionView.anchors {
-                Anchors(.leading).equalTo(self.safeAreaLayoutGuide, constant: 16.0)
-                Anchors(.trailing).equalTo(self.safeAreaLayoutGuide, constant: -16.0)
-                Anchors(.top).equalTo(serviceList1View, attribute: .bottom, constant: 8.0)
-                Anchors(.height).equalTo(constant: 80.0)
+                Anchors.leading.equalTo(self.safeAreaLayoutGuide, constant: 16.0)
+                Anchors.trailing.equalTo(self.safeAreaLayoutGuide, constant: -16.0)
+                Anchors.top.equalTo(serviceList1View, attribute: .bottom, constant: 8.0)
+                Anchors.height.equalTo(constant: 80.0)
                 
             }.sublayout {
                 introductionImage.anchors {
-                    Anchors(.leading).equalTo(constant: 10.0)
-                    Anchors(.centerY)
-                    Anchors(.height, .width).equalTo(constant: 70.0)
+                    Anchors.leading.equalToSuper(constant: 10.0)
+                    Anchors.centerY
+                    Anchors.size(width: 70.0, height: 70.0)
                 }
                 
                 introductionTitle.anchors {
-                    Anchors(.top).equalTo(constant: 8.0)
-                    Anchors(.leading).equalTo(introductionImage, attribute: .trailing, constant: 10.0)
-                    Anchors(.height).equalTo(constant: 24.0)
+                    Anchors.top.equalToSuper(constant: 8.0)
+                    Anchors.leading.equalTo(introductionImage, attribute: .trailing, constant: 10.0)
+                    Anchors.height.equalTo(constant: 24.0)
                 }
                 
                 introductionDescription.anchors {
-                    Anchors(.top).equalTo(introductionTitle, attribute: .bottom, constant: 5.0)
-                    Anchors(.leading).equalTo(introductionImage, attribute: .trailing, constant: 10.0)
-                    Anchors(.bottom).equalTo(constant: -8.0)
-                    Anchors(.trailing).equalTo(constant: -10.0)
+                    Anchors.top.equalTo(introductionTitle, attribute: .bottom, constant: 5.0)
+                    Anchors.leading.equalTo(introductionImage, attribute: .trailing, constant: 10.0)
+                    Anchors.bottom.equalToSuper(constant: -8.0)
+                    Anchors.trailing.equalToSuper(constant: -10.0)
                 }
             }
-
+            
             newsView.anchors {
-                Anchors(.top).equalTo(introductionView, attribute: .bottom, constant: 8.0)
-                Anchors(.leading).equalTo(self.safeAreaLayoutGuide, constant: 16.0)
-                Anchors(.trailing).equalTo(self.safeAreaLayoutGuide, constant: -16.0)
-                Anchors(.height).equalTo(constant: 170.0)
+                Anchors.top.equalTo(introductionView, attribute: .bottom, constant: 8.0)
+                Anchors.leading.equalTo(self.safeAreaLayoutGuide, constant: 16.0)
+                Anchors.trailing.equalTo(self.safeAreaLayoutGuide, constant: -16.0)
+                Anchors.height.equalTo(constant: 170.0)
             }.sublayout {
                 newsTitle.anchors {
-                    Anchors(.leading, .top)
-                    Anchors(.height).equalTo(constant: 24.0)
+                    Anchors.leading
+                    Anchors.top
+                    Anchors.height.equalTo(constant: 24.0)
                 }
                 
                 newsTopic1.anchors {
-                    Anchors(.top).equalTo(newsTitle, attribute: .bottom, constant: 8.0)
-                    Anchors(.leading, .trailing)
-                    Anchors(.height).equalTo(newsTopic2).setMultiplier(1.0)
+                    Anchors.top.equalTo(newsTitle, attribute: .bottom, constant: 8.0)
+                    Anchors.leading.trailing
+                    Anchors.height.equalTo(newsTopic2).multiplier(1.0)
                 }.sublayout {
                     newsTopic1Title.anchors {
-                        Anchors(.top).equalTo(constant: 8.0)
-                        Anchors(.leading).equalTo(constant: 10.0)
-                        Anchors(.height).equalTo(constant: 18.0)
+                        Anchors.top.equalToSuper(constant: 8.0)
+                        Anchors.leading.equalToSuper(constant: 10.0)
+                        Anchors.height.equalTo(constant: 18.0)
                     }
                     
                     newsTopic1Description.anchors {
-                        Anchors(.leading).equalTo(newsTopic1Title)
-                        Anchors(.top).equalTo(newsTopic1Title, attribute: .bottom, constant: 2.0)
-                        Anchors(.bottom).equalTo(constant: -8.0)
+                        Anchors.leading.equalTo(newsTopic1Title)
+                        Anchors.top.equalTo(newsTopic1Title, attribute: .bottom, constant: 2.0)
+                        Anchors.bottom.equalToSuper(constant: -8.0)
                     }
                     
                     tmpa71a50UIImageView.anchors {
-                        Anchors(.centerY)
-                        Anchors(.leading).equalTo(newsTopic1Description, attribute: .trailing, constant: 10.0)
-                        Anchors(.height, .width).equalTo(constant: 50.0)
-                        Anchors(.trailing).equalTo(constant: -10.0)
+                        Anchors.centerY
+                        Anchors.leading.equalTo(newsTopic1Description, attribute: .trailing, constant: 10.0)
+                        Anchors.size(width: 50.0, height: 50.0)
+                        Anchors.trailing.equalToSuper(constant: -10.0)
                     }
                 }
                 
                 newsTopic2.anchors {
-                    Anchors(.top).equalTo(newsTopic1, attribute: .bottom, constant: 8.0)
-                    Anchors(.leading, .trailing, .bottom)
+                    Anchors.top.equalTo(newsTopic1, attribute: .bottom, constant: 8.0)
+                    Anchors.leading.trailing
+                    Anchors.bottom
                 }.sublayout {
                     newsTopic2Title.anchors {
-                        Anchors(.top).equalTo(constant: 8.0)
-                        Anchors(.leading).equalTo(constant: 10.0)
-                        Anchors(.height).equalTo(constant: 18.0)
+                        Anchors.top.equalToSuper(constant: 8.0)
+                        Anchors.leading.equalToSuper(constant: 10.0)
+                        Anchors.height.equalTo(constant: 18.0)
                     }
                     
                     newsTopic2Description.anchors {
-                        Anchors(.leading).equalTo(newsTopic2Title)
-                        Anchors(.top).equalTo(newsTopic2Title, attribute: .bottom, constant: 2.0)
-                        Anchors(.bottom).equalTo(constant: -8.0)
+                        Anchors.leading.equalTo(newsTopic2Title)
+                        Anchors.top.equalTo(newsTopic2Title, attribute: .bottom, constant: 2.0)
+                        Anchors.bottom.equalToSuper(constant: -8.0)
                     }
                     
                     tmpa72bb0UIImageView.anchors {
-                        Anchors(.centerY)
-                        Anchors(.leading).equalTo(newsTopic2Description, attribute: .trailing, constant: 10.0)
-                        Anchors(.height, .width).equalTo(constant: 50.0)
-                        Anchors(.trailing).equalTo(constant: -10.0)
+                        Anchors.centerY
+                        Anchors.leading.equalTo(newsTopic2Description, attribute: .trailing, constant: 10.0)
+                        Anchors.size(width: 50.0, height: 50.0)
+                        Anchors.trailing.equalToSuper(constant: -10.0)
                     }
                 }
             }
-
+            
             optionView.anchors {
-                Anchors(.leading, .trailing).equalTo(self.safeAreaLayoutGuide)
-                Anchors(.top).equalTo(newsView, attribute: .bottom, constant: 8.0)
+                Anchors.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+                Anchors.top.equalTo(newsView, attribute: .bottom, constant: 8.0)
             }.sublayout {
                 optionRow0.anchors {
-                    Anchors(.top, .leading, .trailing)
-                    Anchors(.height).equalTo(constant: 50.0)
+                    Anchors.top
+                    Anchors.leading.trailing
+                    Anchors.height.equalTo(constant: 50.0)
                 }.sublayout {
                     tmpa74120UILabel.anchors {
-                        Anchors(.leading).equalTo(constant: 16.0)
-                        Anchors(.centerY)
+                        Anchors.leading.equalToSuper(constant: 16.0)
+                        Anchors.centerY
                     }
                     tmpa74620UISwitch.anchors {
-                        Anchors(.centerY)
-                        Anchors(.trailing).equalTo(constant: -16.0)
+                        Anchors.centerY
+                        Anchors.trailing.equalToSuper(constant: -16.0)
                     }
                     
                     tmp805290UIView.anchors {
-                        Anchors(.leading).equalTo(constant: 16.0)
-                        Anchors(.trailing).equalTo(constant: -16.0)
-                        Anchors(.bottom)
-                        Anchors(.height).equalTo(constant: 1.0)
+                        Anchors.leading.equalToSuper(constant: 16.0)
+                        Anchors.trailing.equalToSuper(constant: -16.0)
+                        Anchors.bottom
+                        Anchors.height.equalTo(constant: 1.0)
                     }
                 }
                 optionRow1.anchors {
-                    Anchors(.top).equalTo(optionRow0, attribute: .bottom)
-                    Anchors(.leading, .trailing)
-                    Anchors(.height).equalTo(constant: 50.0)
+                    Anchors.top.equalTo(optionRow0, attribute: .bottom)
+                    Anchors.leading.trailing
+                    Anchors.height.equalTo(constant: 50.0)
                 }.sublayout {
                     tmp80bc70UILabel.anchors {
-                        Anchors(.leading).equalTo(constant: 16.0)
-                        Anchors(.centerY)
+                        Anchors.leading.equalToSuper(constant: 16.0)
+                        Anchors.centerY
                     }
                     tmp808e30UISwitch.anchors {
-                        Anchors(.centerY)
-                        Anchors(.trailing).equalTo(constant: -16.0)
+                        Anchors.centerY
+                        Anchors.trailing.equalToSuper(constant: -16.0)
                     }
                     
                     tmp811f90UIView.anchors {
-                        Anchors(.leading).equalTo(constant: 16.0)
-                        Anchors(.trailing).equalTo(constant: -16.0)
-                        Anchors(.bottom)
-                        Anchors(.height).equalTo(constant: 1.0)
+                        Anchors.leading.equalToSuper(constant: 16.0)
+                        Anchors.trailing.equalToSuper(constant: -16.0)
+                        Anchors.bottom
+                        Anchors.height.equalTo(constant: 1.0)
                     }
                 }
             }
